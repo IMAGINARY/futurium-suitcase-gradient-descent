@@ -237,6 +237,18 @@
       (async () => {
         await domReady(app);
 
+        // Hack to forward key events to the iframe
+        window.addEventListener("keydown", (e) =>
+          app.dispatchEvent(
+            new KeyboardEvent("keydown", { key: e.key, code: e.code })
+          )
+        );
+        window.addEventListener("keyup", (e) =>
+          app.dispatchEvent(
+            new KeyboardEvent("keyup", { key: e.key, code: e.code })
+          )
+        );
+
         app.addEventListener("keydown", requestResetIdleTime);
         app.addEventListener("keyup", requestResetIdleTime);
 
