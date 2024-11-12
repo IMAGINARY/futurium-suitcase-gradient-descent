@@ -1,6 +1,6 @@
 {
   "name": "futurium-suitcase-gradient-descent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "dependencies": {
