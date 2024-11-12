@@ -163,7 +163,9 @@
         gamepadIndices.delete(gamepad.index);
       }
 
-      if (app.document.featurePolicy.allowsFeature("gamepad")) {
+      if (
+        true /*app.document.featurePolicy.allowsFeature("gamepad")*/ /* not supported on Safari */
+      ) {
         (async () => {
           await domReady(app);
           app.addEventListener("gamepadconnected", handleGamepadConnected);
